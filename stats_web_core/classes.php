@@ -1,7 +1,7 @@
 <?php
 //uncomment to debug
-#error_reporting(E_ALL);
-#ini_set('display_errors', '1');
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
 abstract class stats_settings {
 	public $prefix;
@@ -64,6 +64,7 @@ class stats_player extends stats_settings {
 			$this->player = $row['player'];
 			$this->playtime = $this->convert_playtime($row['playtime']);
 			$this->arrows = $row['arrows'];
+			$this->move = $row['move'];
 			$this->xp_gained = $row['xp_gained'];
 			$this->joins = $row['joins'];
 			$this->fish_caught = $row['fish_caught'];
