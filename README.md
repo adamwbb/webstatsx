@@ -13,8 +13,6 @@ additionally you'll need to have a web server (any will do, apache, nginx etc.) 
 === Where do I get it? ===
 
    * Direct Download from github (master.zip)
-   * Always the newest stable version? Get the "master" branch at github
-   * Always the cutting edge? Get the "dev" branch at github
 
 === How do I install it? ===
 
