@@ -26,7 +26,7 @@ $n = '<span class="label label-important">No</span>'; // no
 $u = '<span class="label label-info">Couldn\'t be checked</span>'; // unknown
 
 //tables of the stats plugin
-$tables = array('block', 'death', 'kill', 'move', 'player');
+$tables = array('blocks_broken', 'death', 'kill', 'move', 'players');
 
 //vars in the config
 $config_vars = array('mysql_host', 'mysql_user', 'mysql_pass', 'mysql_db', 'mysql_encoding', 'prefix', 'show_avatars', 'show_online_state', 'server_ip', 'server_port', 'link_to_map', 'custom_links', 'enable_server_page');
