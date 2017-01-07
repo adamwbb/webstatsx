@@ -128,7 +128,7 @@ $all_tables_okay = true;
 		</table>
 		<p>If you experience some errors, here are a few common solutions:</p>
 		<ul>
-			<li>The table prefix is wrong, try "stats_", "Stats_" or "Stats2_"</li>
+			<li>The table prefix is wrong, try "stats_", "Stats_" or "Stats3_"</li>
 			<li>There is a missing semicolon in the config.php file</li>
 			<li>Some new settings have been added to the config during an update, please update your config</li>
 		</ul>
