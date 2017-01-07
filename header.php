@@ -24,7 +24,7 @@ $bonus_methods = new bonus_methods();
 	<meta name="description" content="New Webfrontend for Bukkit Stats, powered by charisma">
 	
 	<!-- The styles -->
-	<link id="bs-css" href="css/bootstrap-spacelab.css" rel="stylesheet">
+	<link id="bs-css" href="css/bootstrap-cyborg.css" rel="stylesheet">
 	<style type="text/css">
 	  body {
 		padding-bottom: 40px;
