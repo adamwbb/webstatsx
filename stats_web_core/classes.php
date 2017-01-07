@@ -32,23 +32,23 @@ abstract class stats_settings {
 
 class stats_player extends stats_settings {
 	public $counter;
-	public $player;
+	public $players;
 	public $playtime;
 	public $arrows;
-	public $xpgained;
+	public $xp_gained;
 	public $joins;
-	public $fishcatch;
-	public $damagetaken;
-	public $timeskicked;
-	public $toolsbroken;
-	public $eggsthrown;
-	public $itemscrafted;
+	public $fish_caught;
+	public $damage_taken;
+	public $times_kicked;
+	public $tools_broken;
+	public $eggs_thrown;
+	public $items_crafted;
 	public $omnomnom;
 	public $onfire;
-	public $wordssaid;
-	public $commandsdone;
-	public $lastjoin;
-	public $lastleave;
+	public $words_said;
+	public $commands_done;
+	public $last_join;
+	public $last_seen;
 
 	function __construct($player){
 		parent::__construct();
@@ -64,30 +64,30 @@ class stats_player extends stats_settings {
 			$this->player = $row['player'];
 			$this->playtime = $this->convert_playtime($row['playtime']);
 			$this->arrows = $row['arrows'];
-			$this->xpgained = $row['xpgained'];
+			$this->xp_gained = $row['xp_gained'];
 			$this->joins = $row['joins'];
-			$this->fishcatch = $row['fishcatch'];
-			$this->damagetaken = $row['damagetaken'];
-			$this->timeskicked = $row['timeskicked'];
-			$this->toolsbroken = $row['toolsbroken'];
-			$this->eggsthrown = $row['eggsthrown'];
-			$this->itemscrafted = $row['itemscrafted'];
+			$this->fish_caught = $row['fish_caught'];
+			$this->damage_taken = $row['damage_taken'];
+			$this->times_kicked = $row['times_kicked'];
+			$this->tools_broken = $row['tools_broken'];
+			$this->eggs_thrown = $row['eggs_thrown'];
+			$this->items_crafted = $row['items_crafted'];
 			$this->omnomnom = $row['omnomnom'];
 			$this->onfire = $row['onfire'];
-			$this->wordssaid = $row['wordssaid'];
-			$this->commandsdone = $row['commandsdone'];
-			$this->lastjoin = $row['lastjoin'];
-			$this->lastleave = $row['lastleave'];
+			$this->words_said = $row['words_said'];
+			$this->commandsdone = $row['commands_done'];
+			$this->last_join = $row['lastjoin'];
+			$this->last_seen = $row['last_seen'];
 			#new ones
 			$this->votes = $row['votes'];
 			$this->teleports = $row['teleports'];
-			$this->itempickups = $row['itempickups'];
-			$this->bedenter = $row['bedenter'];
-			$this->bucketfill = $row['bucketfill'];
-			$this->bucketempty = $row['bucketempty'];
-			$this->worldchange = $row['worldchange'];
-			$this->itemdrops = $row['itemdrops'];
-			$this->shear = $row['shear'];
+			$this->items_picked_up = $row['items_picked_up'];
+			$this->beds_entered = $row['beds_entered'];
+			$this->buckets_filled = $row['buckets_filled'];
+			$this->buckets_emptied = $row['buckets_emptied'];
+			$this->times_changed_world = $row['times_changed_world'];
+			$this->items_dropped = $row['items_dropped'];
+			$this->shears = $row['shears'];
 		}
 	}
 
