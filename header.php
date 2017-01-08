@@ -72,7 +72,7 @@ $bonus_methods = new bonus_methods();
 					<span class="icon-bar"></span>
 				</a>
 
-				<a class="brand" href="#"><span><?=$bonus_methods->header_title?></span></a>
+				<a class="brand" href="#"><span>WEBStatsX RELOADED</span></a>
 
 				<?php
 				if($bonus_methods->show_online_state == 1){
