@@ -1,11 +1,12 @@
 <?php
 //uncomment to debug
 //error_reporting(E_ALL);
-//ini_set('display_errors', '1');
+ini_set('display_errors', '1');
 
 abstract class stats_settings {
 	public $prefix;
 	public $mysqli;
+	
 
 	function __construct(){
 		if(!(@include __dir__.'/../config.php')){
@@ -104,25 +105,25 @@ class stats_players extends stats_settings {
 		if($type > 3 || $type < 0){
 			return "Error! No movement of this type exists.";
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT distance FROM '.$this->prefix.'move WHERE players = "'.$this->players.'" AND type = "'.$type.'"');
+			$res = mysqli_query($this->mysqli, 'SELECT value FROM '.$this->prefix.'move WHERE players = "'.$this->players.'" AND type = "'.$type.'"');
 			$row = mysqli_fetch_assoc($res);
 
 			if(mysqli_num_rows($res) < 1){
 				return 0;
 			} else {
-				return $row['distance'];
+				return $row['value'];
 			}
 		}
 	}
 
 	public function get_total_movement(){
-		$res = mysqli_query($this->mysqli, 'SELECT SUM(distance) as dis FROM '.$this->prefix.'move WHERE players = "'.$this->players.'"');
+		$res = mysqli_query($this->mysqli, 'SELECT SUM(value) as value FROM '.$this->prefix.'move WHERE players = "'.$this->players.'"');
 		$row = mysqli_fetch_assoc($res);
 
 		if(mysqli_num_rows($res) < 1){
 			return 0;
 		} else {
-			return $row['dis'];
+			return $row['value'];
 		}
 	}
 
@@ -167,7 +168,7 @@ class stats_players extends stats_settings {
 	// kills
 	public function get_kills($type = NULL){
 		if(empty($type)){
-			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as amn FROM '.$this->prefix.'kill WHERE playes = "'.$this->players.'"');
+			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as amn FROM '.$this->prefix.'kill WHERE players = "'.$this->players.'"');
 		} else {
 			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as amn FROM '.$this->prefix.'kill WHERE players = "'.$this->players.'" AND type = "'.$type.'"');
 		}
@@ -254,15 +255,15 @@ class stats_global extends stats_settings {
 	}
 
 	public function count_players(){
-		$resource = mysqli_query($this->mysqli, 'SELECT COUNT(counter) as c FROM '.$this->prefix.'players');
+		$resource = mysqli_query($this->mysqli, 'SELECT COUNT(count) as c FROM '.$this->prefix.'players');
 		$count = mysqli_fetch_assoc($resource);
 		return $count['c'];
 	}
 
 	public function get_total_distance_moved(){
-		$res = mysqli_query($this->mysqli, 'SELECT SUM(distance) as dis FROM '.$this->prefix.'move');
+		$res = mysqli_query($this->mysqli, 'SELECT SUM(value) as value FROM '.$this->prefix.'move');
 		$row = mysqli_fetch_assoc($res);
-		return $row['dis'];
+		return $row['value'];
 	}
 
 	public function get_total_kills(){
@@ -355,9 +356,9 @@ class stats_global extends stats_settings {
 
 	public function get_top_players_blocks_placed($res_type = NULL, $limit = NULL){
 		if(empty($limit) || !is_integer($limit)){
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'block WHERE break = 0 GROUP BY players ORDER BY amn desc');
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'blocks_placed = 0 GROUP BY players ORDER BY amn desc');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'block WHERE break = 0 GROUP BY players ORDER BY amn desc LIMIT '.$limit);			
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'blocks_placed = 0 GROUP BY players ORDER BY amn desc LIMIT '.$limit);			
 		}
 
 		if($res_type == 'mysql'){
@@ -375,9 +376,9 @@ class stats_global extends stats_settings {
 
 	public function get_top_players_blocks_broken($res_type = NULL, $limit = NULL){
 		if(empty($limit) || !is_integer($limit)){
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'block WHERE break = 1 GROUP BY players ORDER BY amn desc');
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'blocks_broken = 1 GROUP BY players ORDER BY amn desc');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'block WHERE break = 1 GROUP BY players ORDER BY amn desc LIMIT '.$limit);			
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'blocks_broken = 1 GROUP BY players ORDER BY amn desc LIMIT '.$limit);			
 		}
 
 		if($res_type == 'mysql'){
@@ -442,8 +443,8 @@ class bonus_methods {
 		//$this->tmotd = $motd;
 		//$this->tmotd_headline = $motd_headline;
 
-		$this->page_title = empty($page_title) ? 'Minecraft WEBStatsX' : $page_title;
-		$this->header_title = empty($header_title) ? 'WEBStatsX' : $header_title;
+		$this->page_title = empty($page_title) ? 'Minecraft WEBStatsX Reloaded' : $page_title;
+		$this->header_title = empty($header_title) ? 'WEBStatsX Reloaded' : $header_title;
 		$this->top_limit = empty($top_limit) || !is_int($top_limit) ? 10 : $top_limit;
 
 		if(empty($link_to_map) || $link_to_map == ''){
