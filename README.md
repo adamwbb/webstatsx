@@ -1,6 +1,9 @@
 #THIS PRODUCT IS NOW BEING WORKED ON AND UPDATED TO WORK WITH STATS3 PLEASE BE PAITENT.
 
 Testing Status: Not Working.
+Distance Working
+TODO:
+Get other stats working.
 
 
 This is an alternative Web-Interface for the Stats plugin by lolmewn. ( http://dev.bukkit.org/server-mods/lolmewnstats/ )
