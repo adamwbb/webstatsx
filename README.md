@@ -1,9 +1,26 @@
-#THIS PRODUCT IS NOW BEING WORKED ON AND UPDATED TO WORK WITH STATS3 PLEASE BE PAITENT.
+#THIS PROJECT IS BEING UPDATED TO WORK WITH STATS3 PLEASE BE PAITENT.
 
-Testing Status: Not Working.
+ETA: July 2017
+
+Testing Status: Not Fully Functional
+
+Done:
+
+Rebranding
+
+
+SQL Varibles switched to new table entries
+
 Distance Working
+
 TODO:
+
 Get other stats working.
+
+Get Players List working.
+
+
+WEBStatsX Reloaded is a continuation of the work from cynexit's project. All help and support is needed so please feel free to contribute to this project to have it up and running sooner.
 
 
 This is an alternative Web-Interface for the Stats plugin by lolmewn. ( http://dev.bukkit.org/server-mods/lolmewnstats/ )
