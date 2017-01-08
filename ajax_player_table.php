@@ -7,7 +7,7 @@
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */
-	$aColumns = array( 'player', 'playtime', 'lastjoin', 'xpgained', 'damagetaken', 'timeskicked', 'itemscrafted' );
+	$aColumns = array( 'players', 'play_time', 'last_join', 'xp_gained', 'damage_taken', 'times_kicked', 'items_crafted' );
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = "counter";
@@ -15,7 +15,7 @@
 	@include 'config.php';
 
 	/* DB table to use */
-	$sTable = $prefix."player";	
+	$sTable = $prefix."players";	
 
 	/* Database connection information */
 	$gaSql['user']       = $mysql_user;
@@ -162,7 +162,7 @@
 		"sEcho" => intval($_GET['sEcho']),
 		"iTotalRecords" => $iTotal,
 		"iTotalDisplayRecords" => $iFilteredTotal,
-		"aaData" => array()
+		"name" => array()
 	);
 	
 	while ( $aRow = mysql_fetch_array( $rResult ) )
@@ -170,7 +170,7 @@
 		$row = array();
 		for ( $i=0 ; $i<count($aColumns) ; $i++ )
 		{
-			if ( $aColumns[$i] == "player" )
+			if ( $aColumns[$i] == "players" )
 			{
 				/* Special output formatting for 'version' column */
 				$row[] = '<span class="p_name"><a class="ajax-link" href="single_player.php?p='.$aRow[ $aColumns[$i] ].'">'.$aRow[ $aColumns[$i] ].'</a></span>';
@@ -182,7 +182,7 @@
 				$row[] = $aRow[ $aColumns[$i] ];
 			}
 		}
-		$output['aaData'][] = $row;
+		$output['name'][] = $row;
 	}
 	
 	echo json_encode( $output );

@@ -443,7 +443,7 @@ class bonus_methods {
 		//$this->tmotd = $motd;
 		//$this->tmotd_headline = $motd_headline;
 
-		$this->page_title = empty($page_title) ? 'Minecraft WEBStatsX Reloaded' : $page_title;
+		$this->page_title = empty($page_title) ? 'WEBStatsX Reloaded' : $page_title;
 		$this->header_title = empty($header_title) ? 'WEBStatsX Reloaded' : $header_title;
 		$this->top_limit = empty($top_limit) || !is_int($top_limit) ? 10 : $top_limit;
 
