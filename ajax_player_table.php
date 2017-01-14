@@ -7,7 +7,7 @@
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */
-	$aColumns = array( 'players', 'playtime', 'last_join', 'xp_gained', 'damage_taken', 'items_crafted' );
+	$aColumns = array( 'name', 'uuid', );
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = 'name';
@@ -135,6 +135,7 @@
 		$sOrder
 		$sLimit
 		";
+	
 	$rResult = mysql_query( $sQuery, $gaSql['link'] ) or fatal_error( 'MySQL Error: ' . mysql_errno() );
 	
 	/* Data set length after filtering */
@@ -182,7 +183,7 @@
 				$row[] = $aRow[ $aColumns[$i] ];
 			}
 		}
-		$output['name'][] = $row;
+		$output['name']['uuid'][] = $row;
 	}
 	
 	echo json_encode( $output );

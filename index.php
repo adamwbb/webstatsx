@@ -59,8 +59,8 @@ include('header.php');
 							</thead>
 							<tbody>
 						 	<?php
-							$player = $stats_global->get_top_players_move('mysql', $bonus_methods->top_limit);
-							while ($row = mysqli_fetch_row($player)){
+							$players = $stats_global->get_top_players_move('mysql', $bonus_methods->top_limit);
+							while ($row = mysqli_fetch_row($players)){
 								echo '<tr><td class="p_name"><a class="ajax-link" href="single_player.php?p='.$row[0].'">'.$row[0].'</a></td>';
 								echo '<td>'.number_format($row[1], 2, '.', '').'</td></tr>';
 							}

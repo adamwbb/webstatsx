@@ -1,11 +1,11 @@
 <?php
-$player_list = explode(', ', $_POST['player_list']);
-array_pop($player_list);
+$players = explode(', ', $_POST['players']);
+array_pop($players);
 
-if(count($player_list) > 0){
+if(count($players) > 0){
 	include 'stats_web_core/classes.php';
 	$stats_global = new stats_global();
 
-	echo json_encode($stats_global->get_players_state($player_list));
+	echo json_encode($stats_global->get_players_state($players));
 }
 ?>

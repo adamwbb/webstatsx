@@ -20,13 +20,9 @@
 						<table class="table table-striped table-bordered bootstrap-datatable ajax-datatable">
 							<thead>
 								<tr>
-									<th>Username</th>
-									<th>Playtime</th>
-									<th>Last join</th>
-									<th>EXP gained</th>
-									<th>Damage taken</th>
-									<th>Kicked</th>
-									<th>Items crafted</th>
+									<th>Name</th>
+									<th>UUID</th>
+
 								</tr>
 							</thead>
 							<tbody>	
