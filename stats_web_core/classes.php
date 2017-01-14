@@ -130,15 +130,15 @@ class stats_players extends stats_settings {
 	// deaths
 	public function get_deaths($cause = NULL){
 		if(empty($cause)){
-			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as amn FROM '.$this->prefix.'death WHERE players = "'.$this->players.'"');
+			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as value FROM '.$this->prefix.'death WHERE players = "'.$this->players.'"');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as amn FROM '.$this->prefix.'death WHERE players = "'.$this->players.'" and cause = "'.$cause.'"');
+			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as value FROM '.$this->prefix.'death WHERE players = "'.$this->players.'" and cause = "'.$cause.'"');
 		}
 
 		$row = mysqli_fetch_assoc($res);
 		//prevent a "return NULL"
-		if($row['amn'] > 0){
-			return $row['amn'];
+		if($row['value'] > 0){
+			return $row['value'];
 		} else {
 			return 0;
 		}
@@ -168,15 +168,15 @@ class stats_players extends stats_settings {
 	// kills
 	public function get_kills($type = NULL){
 		if(empty($type)){
-			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as amn FROM '.$this->prefix.'kill WHERE players = "'.$this->players.'"');
+			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as value FROM '.$this->prefix.'kill WHERE players = "'.$this->players.'"');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as amn FROM '.$this->prefix.'kill WHERE players = "'.$this->players.'" AND type = "'.$type.'"');
+			$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as value FROM '.$this->prefix.'kill WHERE players = "'.$this->players.'" AND type = "'.$type.'"');
 		}
 
 		$row = mysqli_fetch_assoc($res);
 		//prevent a "return NULL"
-		if($row['amn'] > 0){
-			return $row['amn'];
+		if($row['value'] > 0){
+			return $row['value'];
 		} else {
 			return 0;
 		}
@@ -204,7 +204,7 @@ class stats_players extends stats_settings {
 
 	//blocks
 	public function get_all_blocks($res_type = NULL){
-		$res = mysqli_query($this->mysqli, 'SELECT sbo.blockID, q1.amn, q2.brk FROM (SELECT blockID FROM '.$this->prefix.'block WHERE players = "'.$this->players.'" GROUP BY blockID ORDER BY blockID asc) as sbo LEFT JOIN (SELECT blockID, SUM(amount) as amn FROM '.$this->prefix.'block WHERE players = "'.$this->players.'" AND break = 0 GROUP BY blockID ORDER BY blockID asc) as q1 ON sbo.blockID = q1.blockID LEFT JOIN (SELECT blockID, SUM(amount) as brk FROM '.$this->prefix.'block WHERE players = "'.$this->players.'" AND break = 1 GROUP BY blockID ORDER BY blockID asc) as q2 ON sbo.blockID = q2.blockID');
+		$res = mysqli_query($this->mysqli, 'SELECT sbo.blockID, q1.value, q2.brk FROM (SELECT blockID FROM '.$this->prefix.'block WHERE players = "'.$this->players.'" GROUP BY blockID ORDER BY blockID asc) as sbo LEFT JOIN (SELECT blockID, SUM(amount) as value FROM '.$this->prefix.'block WHERE players = "'.$this->players.'" AND break = 0 GROUP BY blockID ORDER BY blockID asc) as q1 ON sbo.blockID = q1.blockID LEFT JOIN (SELECT blockID, SUM(amount) as brk FROM '.$this->prefix.'block WHERE players = "'.$this->players.'" AND break = 1 GROUP BY blockID ORDER BY blockID asc) as q2 ON sbo.blockID = q2.blockID');
 
 		if($res_type == 'mysql'){
 			return $res;
@@ -212,7 +212,7 @@ class stats_players extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['blockID'], $row['amn'], $row['brk']);
+					$return_arr[] = array($row['blockID'], $row['value'], $row['brk']);
 			}
 
 			return $return_arr;
@@ -255,9 +255,9 @@ class stats_global extends stats_settings {
 	}
 
 	public function count_players(){
-		$resource = mysqli_query($this->mysqli, 'SELECT COUNT(count) as c FROM '.$this->prefix.'players');
+		$resource = mysqli_query($this->mysqli, 'SELECT COUNT(id) as id FROM '.$this->prefix.'last_join');
 		$count = mysqli_fetch_assoc($resource);
-		return $count['c'];
+		return $count['id'];
 	}
 
 	public function get_total_distance_moved(){
@@ -267,38 +267,38 @@ class stats_global extends stats_settings {
 	}
 
 	public function get_total_kills(){
-		$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as amn FROM '.$this->prefix.'kill');
+		$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as value FROM '.$this->prefix.'kill');
 		$row = mysqli_fetch_assoc($res);
-		return $row['amn'];
+		return $row['value'];
 	}
 
 	public function get_total_deaths(){
-		$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as amn FROM '.$this->prefix.'death');
+		$res = mysqli_query($this->mysqli, 'SELECT SUM(amount) as value FROM '.$this->prefix.'death');
 		$row = mysqli_fetch_assoc($res);
-		return $row['amn'];
+		return $row['value'];
 	}
 
 	public function get_kill_average(){
-		$res = mysqli_query($this->mysqli, 'SELECT AVG(sk1.sumam) as amn FROM (SELECT SUM(amount) as sumam FROM '.$this->prefix.'kill GROUP BY players) as sk1');
+		$res = mysqli_query($this->mysqli, 'SELECT AVG(sk1.sumam) as value FROM (SELECT SUM(amount) as sumam FROM '.$this->prefix.'kill GROUP BY players) as sk1');
 
 		$row = mysqli_fetch_assoc($res);
-		return $row['amn'];
+		return $row['value'];
 	}
 
 	public function get_death_average(){
-		$res = mysqli_query($this->mysqli, 'SELECT AVG(sk1.sumam) as amn FROM (SELECT SUM(amount) as sumam FROM '.$this->prefix.'death GROUP BY players) as sk1');
+		$res = mysqli_query($this->mysqli, 'SELECT AVG(sk1.sumam) as value FROM (SELECT SUM(amount) as sumam FROM '.$this->prefix.'death GROUP BY players) as sk1');
 
 		$row = mysqli_fetch_assoc($res);
-		return $row['amn'];
+		return $row['value'];
 	}
 
 
 	// top functions
 	public function get_top_players_move($res_type = NULL, $limit = NULL){
 		if(empty($limit) || !is_integer($limit)){
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(distance) as dis FROM '.$this->prefix.'move GROUP BY players ORDER BY dis desc');
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(distance) as value FROM '.$this->prefix.'move GROUP BY players ORDER BY value desc');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(distance) as dis FROM '.$this->prefix.'move GROUP BY players ORDER BY dis desc LIMIT '.$limit);			
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(distance) as value FROM '.$this->prefix.'move GROUP BY players ORDER BY value desc LIMIT '.$limit);			
 		}
 
 		if($res_type == 'mysql'){
@@ -307,7 +307,7 @@ class stats_global extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['players'], $row['dis']);
+					$return_arr[] = array($row['players'], $row['value']);
 			}
 
 			return $return_arr;
@@ -316,9 +316,9 @@ class stats_global extends stats_settings {
 
 	public function get_top_players_kill($res_type = NULL, $limit = NULL){
 		if(empty($limit) || !is_integer($limit)){
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'kill GROUP BY players ORDER BY amn desc');
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as value FROM '.$this->prefix.'kill GROUP BY players ORDER BY value desc');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'kill GROUP BY players ORDER BY amn desc LIMIT '.$limit);			
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as value FROM '.$this->prefix.'kill GROUP BY players ORDER BY value desc LIMIT '.$limit);			
 		}
 
 		if($res_type == 'mysql'){
@@ -327,7 +327,7 @@ class stats_global extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['players'], $row['amn']);
+					$return_arr[] = array($row['players'], $row['value']);
 			}
 
 			return $return_arr;
@@ -336,9 +336,9 @@ class stats_global extends stats_settings {
 
 	public function get_top_players_death($res_type = NULL, $limit = NULL){
 		if(empty($limit) || !is_integer($limit)){
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'death GROUP BY players ORDER BY amn desc');
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as value FROM '.$this->prefix.'death GROUP BY players ORDER BY value desc');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'death GROUP BY players ORDER BY amn desc LIMIT '.$limit);			
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as value FROM '.$this->prefix.'death GROUP BY players ORDER BY value desc LIMIT '.$limit);			
 		}
 
 		if($res_type == 'mysql'){
@@ -347,7 +347,7 @@ class stats_global extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['players'], $row['amn']);
+					$return_arr[] = array($row['players'], $row['value']);
 			}
 
 			return $return_arr;
@@ -356,9 +356,9 @@ class stats_global extends stats_settings {
 
 	public function get_top_players_blocks_placed($res_type = NULL, $limit = NULL){
 		if(empty($limit) || !is_integer($limit)){
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'blocks_placed = 0 GROUP BY players ORDER BY amn desc');
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as value FROM '.$this->prefix.'blocks_placed = 0 GROUP BY players ORDER BY value desc');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'blocks_placed = 0 GROUP BY players ORDER BY amn desc LIMIT '.$limit);			
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as value FROM '.$this->prefix.'blocks_placed = 0 GROUP BY players ORDER BY value desc LIMIT '.$limit);			
 		}
 
 		if($res_type == 'mysql'){
@@ -367,7 +367,7 @@ class stats_global extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['players'], $row['amn']);
+					$return_arr[] = array($row['players'], $row['value']);
 			}
 
 			return $return_arr;
@@ -376,9 +376,9 @@ class stats_global extends stats_settings {
 
 	public function get_top_players_blocks_broken($res_type = NULL, $limit = NULL){
 		if(empty($limit) || !is_integer($limit)){
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'blocks_broken = 1 GROUP BY players ORDER BY amn desc');
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as value FROM '.$this->prefix.'blocks_broken = 1 GROUP BY players ORDER BY value desc');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as amn FROM '.$this->prefix.'blocks_broken = 1 GROUP BY players ORDER BY amn desc LIMIT '.$limit);			
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(amount) as value FROM '.$this->prefix.'blocks_broken = 1 GROUP BY players ORDER BY value desc LIMIT '.$limit);			
 		}
 
 		if($res_type == 'mysql'){
@@ -387,7 +387,7 @@ class stats_global extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['players'], $row['amn']);
+					$return_arr[] = array($row['players'], $row['value']);
 			}
 
 			return $return_arr;
@@ -403,9 +403,9 @@ class stats_global extends stats_settings {
 			$query .= 'players = "'.$players.'" OR ';
 		}
 
-		$res = mysqli_query($this->mysqli, 'SELECT players, lastjoin, lastleave FROM '.$this->prefix.'players WHERE '.substr($query, 0, -4));
+		$res = mysqli_query($this->mysqli, 'SELECT players, last_join, last_seen FROM '.$this->prefix.'players WHERE '.substr($query, 0, -4));
 		while($row = mysqli_fetch_assoc($res)){
-			if(strtotime($row['lastjoin']) > strtotime($row['lastleave'])){
+			if(strtotime($row['last_join']) > strtotime($row['last_seen'])){
 				$return_arr[$row['players']] = 1;
 			} else {
 				$return_arr[$row['players']] = 0;			

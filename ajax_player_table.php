@@ -7,15 +7,15 @@
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */
-	$aColumns = array( 'players', 'play_time', 'last_join', 'xp_gained', 'damage_taken', 'times_kicked', 'items_crafted' );
+	$aColumns = array( 'players', 'playtime', 'last_join', 'xp_gained', 'damage_taken', 'items_crafted' );
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
-	$sIndexColumn = "counter";
+	$sIndexColumn = 'name';
 	
 	@include 'config.php';
 
 	/* DB table to use */
-	$sTable = $prefix."players";	
+	$sTable = $prefix.'players';	
 
 	/* Database connection information */
 	$gaSql['user']       = $mysql_user;
@@ -32,7 +32,7 @@
 	/* 
 	 * Local functions
 	 */
-	function fatal_error ( $sErrorMessage = '' )
+	function fatal_error ( $sErrorMessage = 'Fatal Error Please contact developer to resolve this issue' )
 	{
 		header( $_SERVER['SERVER_PROTOCOL'] .' 500 Internal Server Error' );
 		die( $sErrorMessage );
