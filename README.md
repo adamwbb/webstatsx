@@ -8,16 +8,19 @@ Done:
 
 Rebranding
 
-
 SQL Varibles switched to new table entries
 
 Distance Working
 
 Players Tracked Working
 
+Kills Working
+
+Deaths Working
+
 TODO:
 
-Get other stats working.
+Get top 10 lists working.
 
 Get Players List working.
 
