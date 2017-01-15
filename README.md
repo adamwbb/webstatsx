@@ -24,6 +24,8 @@ Get top 10 lists working.
 
 Get Players List working.
 
+Add New Block and Entity Images
+
 
 WEBStatsX Reloaded is a continuation of the work from cynexit's project. All help and support is needed so please feel free to contribute to this project to have it up and running sooner.
 
