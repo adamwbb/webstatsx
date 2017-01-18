@@ -33,8 +33,8 @@
 							</thead>
 							<tbody>
 						 	<?php
-						 	$player = $stats_global->get_top_players_move('mysql', 10);
-							while ($row = mysqli_fetch_row($player)){
+						 	$players = $stats_global->get_top_players_move('mysql', 10);
+							while ($row = mysqli_fetch_row($players)){
 								echo '<tr><td><a class="ajax-link" href="single_player.php?p='.$row[0].'">'.$row[0].'</a></td>';
 								echo '<td>'.$row[1].'</td></tr>';
 							}
@@ -65,8 +65,8 @@
 							</thead>
 							<tbody>
 						 	<?php
-						 	$player = $stats_global->get_top_players_kill('mysql', 10);
-							while ($row = mysqli_fetch_row($player)){
+						 	$players = $stats_global->get_top_players_kill('mysql', 10);
+							while ($row = mysqli_fetch_row($players)){
 								echo '<tr><td><a class="ajax-link" href="single_player.php?p='.$row[0].'">'.$row[0].'</a></td>';
 								echo '<td>'.$row[1].'</td></tr>';
 							}
@@ -97,8 +97,8 @@
 							</thead>
 							<tbody>
 						 	<?php
-						 	$player = $stats_global->get_top_players_death('mysql', 10);
-							while ($row = mysqli_fetch_row($player)){
+						 	$players = $stats_global->get_top_players_death('mysql', 10);
+							while ($row = mysqli_fetch_row($players)){
 								echo '<tr><td><a class="ajax-link" href="single_player.php?p='.$row[0].'">'.$row[0].'</a></td>';
 								echo '<td>'.$row[1].'</td></tr>';
 							}
@@ -134,8 +134,8 @@
 							</thead>
 							<tbody>
 						 	<?php
-						 	$player = $stats_global->get_top_players_blocks_placed('mysql', 10);
-							while ($row = mysqli_fetch_row($player)){
+						 	$players = $stats_global->get_top_players_blocks_placed('mysql', 10);
+							while ($row = mysqli_fetch_row($players)){
 								echo '<tr><td><a class="ajax-link" href="single_player.php?p='.$row[0].'">'.$row[0].'</a></td>';
 								echo '<td>'.$row[1].'</td></tr>';
 							}
@@ -166,8 +166,8 @@
 							</thead>
 							<tbody>
 						 	<?php
-						 	$player = $stats_global->get_top_players_blocks_broken('mysql', 10);
-							while ($row = mysqli_fetch_row($player)){
+						 	$players = $stats_global->get_top_players_blocks_broken('mysql', 10);
+							while ($row = mysqli_fetch_row($players)){
 								echo '<tr><td><a class="ajax-link" href="single_player.php?p='.$row[0].'">'.$row[0].'</a></td>';
 								echo '<td>'.$row[1].'</td></tr>';
 							}
@@ -199,10 +199,10 @@
 						  </thead>
 						  <tbody>
 						  	<?php
-							while ($player = $stats_global->get_players('playtime', 'desc', 8)){
-            					echo '<tr><td><a class="ajax-link" href="single_player.php?p='.$player->player.'">'.$player->player.'</a></td>';
-            					echo '<td>'.$player->playtime.'</td>';
-            					echo '<td>'.$player->joins.'</td>';
+							while ($players = $stats_global->get_players('playtime', 'name', 8)){
+            					echo '<tr><td><a class="ajax-link" href="single_player.php?p='.$playerss->players.'">'.$playerss->players.'</a></td>';
+            					echo '<td>'.$players->playtime.'</td>';
+            					echo '<td>'.$players->joins.'</td>';
             				}
 							?>							
 						  </tbody>

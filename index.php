@@ -91,8 +91,8 @@ include('header.php');
 							</thead>
 							<tbody>
 						 	<?php
-							$player = $stats_global->get_top_players_kill('mysql', $bonus_methods->top_limit);
-							while ($row = mysqli_fetch_row($player)){
+							$players = $stats_global->get_top_players_kill('mysql', $bonus_methods->top_limit);
+							while ($row = mysqli_fetch_row($players)){
 								echo '<tr><td class="p_name"><a class="ajax-link" href="single_player.php?p='.$row[0].'">'.$row[0].'</a></td>';
 								echo '<td>'.$row[1].'</td></tr>';
 							}
@@ -123,8 +123,8 @@ include('header.php');
 							</thead>
 							<tbody>
 						 	<?php
-							$player = $stats_global->get_top_players_death('mysql', $bonus_methods->top_limit);
-							while ($row = mysqli_fetch_row($player)){
+							$players = $stats_global->get_top_players_death('mysql', $bonus_methods->top_limit);
+							while ($row = mysqli_fetch_row($players)){
 								echo '<tr><td class="p_name"><a class="ajax-link" href="single_player.php?p='.$row[0].'">'.$row[0].'</a></td>';
 								echo '<td>'.$row[1].'</td></tr>';
 							}
@@ -160,8 +160,8 @@ include('header.php');
 							</thead>
 							<tbody>
 						 	<?php
-							$player = $stats_global->get_top_players_blocks_placed('mysql', $bonus_methods->top_limit);
-							while ($row = mysqli_fetch_row($player)){
+							$players = $stats_global->get_top_players_blocks_placed('mysql', $bonus_methods->top_limit);
+							while ($row = mysqli_fetch_row($players)){
 								echo '<tr><td class="p_name"><a class="ajax-link" href="single_player.php?p='.$row[0].'">'.$row[0].'</a></td>';
 								echo '<td>'.$row[1].'</td></tr>';
 							}
@@ -192,8 +192,8 @@ include('header.php');
 							</thead>
 							<tbody>
 						 	<?php
-							$player = $stats_global->get_top_players_blocks_broken('mysql', $bonus_methods->top_limit);
-							while ($row = mysqli_fetch_row($player)){
+							$players = $stats_global->get_top_players_blocks_broken('mysql', $bonus_methods->top_limit);
+							while ($row = mysqli_fetch_row($players)){
 								echo '<tr><td class="p_name"><a class="ajax-link" href="single_player.php?p='.$row[0].'">'.$row[0].'</a></td>';
 								echo '<td>'.$row[1].'</td></tr>';
 							}
@@ -225,10 +225,10 @@ include('header.php');
 						  </thead>
 						  <tbody>
 						  	<?php
-							while ($player = $stats_global->get_players('playtime', 'desc', $bonus_methods->top_limit)){
-								echo '<tr><td  class="p_name"><a class="ajax-link" href="single_player.php?p='.$player->player.'">'.$player->player.'</a></td>';
-            					echo '<td>'.$player->playtime.'</td>';
-            					echo '<td>'.$player->joins.'</td>';
+							while ($players = $stats_global->get_players('playtime', 'desc', $bonus_methods->top_limit)){
+								echo '<tr><td  class="p_name"><a class="ajax-link" href="single_player.php?p='.$players->players.'">'.$players->players.'</a></td>';
+            					echo '<td>'.$players->playtime.'</td>';
+            					echo '<td>'.$players->joins.'</td>';
             				}
 							?>							
 						  </tbody>

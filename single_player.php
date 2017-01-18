@@ -4,7 +4,7 @@ ini_set('display_errors', '1');
 
 include('header.php');
 
-$player = new Stats3_players(htmlentities($_GET['players'], ENT_QUOTES, 'UTF-8'));
+$players = new (htmlentities($_GET['uuid'], ENT_QUOTES, 'UTF-8'));
 ?>
 
 
@@ -17,7 +17,7 @@ $player = new Stats3_players(htmlentities($_GET['players'], ENT_QUOTES, 'UTF-8')
 						<a href="players.php" class="ajax-link">Players</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#" id="player_id"><?php echo $player->uuid; ?></a>
+						<a href="#" id="player_id"><?php echo $players->uuid; ?></a>
 					</li>
 				</ul>
 			</div>
@@ -27,7 +27,7 @@ $player = new Stats3_players(htmlentities($_GET['players'], ENT_QUOTES, 'UTF-8')
 					<div class="row-fluid">
 						<div class="box span12">
 							<div class="box-header well" data-original-title>
-								<h2><i class="icon-user"></i> <?php echo $player->uuid; ?></h2>
+								<h2><i class="icon-user"></i> <?php echo $players->uuid; ?></h2>
 								<!--
 								<div class="box-icon">
 									<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>
@@ -41,68 +41,68 @@ $player = new Stats3_players(htmlentities($_GET['players'], ENT_QUOTES, 'UTF-8')
 									  <tbody>
 										<tr>
 											<td>Playtime:</td>
-											<td><?php echo $player->playtime; ?></td>
+											<td><?php echo $players->playtime; ?></td>
 											<td>Arrows:</td>
-											<td><?php echo $player->arrows; ?></td>
+											<td><?php echo $players->arrows; ?></td>
 										</tr>
 										<tr>
 											<td>XP gained:</td>
-											<td><?php echo $player->xp_gained; ?></td>
+											<td><?php echo $players->xp_gained; ?></td>
 											<td>Joins:</td>
-											<td><?php echo $player->joins; ?></td>
+											<td><?php echo $players->joins; ?></td>
 										</tr>
 										<tr>
 											<td>Fish caught:</td>
-											<td><?php echo $player->fish_caught; ?></td>
+											<td><?php echo $players->fish_caught; ?></td>
 											<td>Damage taken:</td>
-											<td><?php echo $player->damage_taken; ?></td>
+											<td><?php echo $players->damage_taken; ?></td>
 										</tr>
 										<tr>
 											<td>Tools broken:</td>
-											<td><?php echo $player->tools_broken; ?></td>
+											<td><?php echo $players->tools_broken; ?></td>
 										</tr>
 										<tr>
 											<td>Eggs thrown:</td>
-											<td><?php echo $player->eggs_thrown; ?></td>
+											<td><?php echo $players->eggs_thrown; ?></td>
 											<td>Items crafted:</td>
-											<td><?php echo $player->items_crafted; ?></td>
+											<td><?php echo $players->items_crafted; ?></td>
 										</tr>
 										<tr>
 											<td>Omnomnom:</td>
-											<td><?php echo $player->omnomnom; ?></td>
+											<td><?php echo $players->omnomnom; ?></td>
 										</tr>
 										<tr>
 											<td>Words said:</td>
-											<td><?php echo $player->words_said; ?></td>
+											<td><?php echo $players->words_said; ?></td>
 											<td>Commands done:</td>
-											<td><?php echo $player->commands_done; ?></td>
+											<td><?php echo $players->commands_done; ?></td>
 										</tr>
 										<tr>
 											<td>Last join:</td>
-											<td><?php echo $player->last_join; ?></td>
+											<td><?php echo $players->last_join; ?></td>
 											<td>Last leave:</td>
-											<td><?php echo $player->last_seen; ?></td>
+											<td><?php echo $players->last_seen; ?></td>
 										</tr>
 
 										<tr>
 											<td>Items picked up:</td>
-											<td><?php echo $player->items_picked_up; ?></td>
+											<td><?php echo $players->items_picked_up; ?></td>
 											<td>Items dropped:</td>
-											<td><?php echo $player->items_dropped; ?></td>
+											<td><?php echo $players->items_dropped; ?></td>
 										</tr>
 										<tr>
 											<td>Entered a bed:</td>
-											<td><?php echo $player->beds_entered; ?></td>
+											<td><?php echo $players->beds_entered; ?></td>
 										</tr>
 										<tr>
 											<td>Filled a bucket:</td>
-											<td><?php echo $player->buckets_filled; ?></td>
+											<td><?php echo $players->buckets_filled; ?></td>
 											<td>Emptied a bucket:</td>
-											<td><?php echo $player->buckets_empied; ?></td>
+											<td><?php echo $players->buckets_empied; ?></td>
 										</tr>
 										<tr>
 											<td>Sheared:</td>
-											<td><?php echo $player->shears; ?></td>
+											<td><?php echo $players->shears; ?></td>
 											<td></td>
 											<td></td>
 										</tr>
@@ -137,7 +137,7 @@ $player = new Stats3_players(htmlentities($_GET['players'], ENT_QUOTES, 'UTF-8')
 									</thead>
 									<tbody>
 										<?php
-										$blocks = $player->get_all_blocks('mysql');
+										$blocks = $players->get_all_blocks('mysql');
 										while ($row = mysqli_fetch_assoc($blocks)){
 											echo '<tr><td class="centered"><img src="img/blocks/'.$row['blockID'].'.png" height="32" width="32" alt="Block '.$row['blockID'].'" /></td>';
 											echo '<td>'.$row['blockID'].'</td>';
@@ -168,10 +168,10 @@ $player = new Stats3_players(htmlentities($_GET['players'], ENT_QUOTES, 'UTF-8')
 							</div>
 							<div class="box-content">
 								<?php
-								$foot = $player->get_movement(0);
-								$boat = $player->get_movement(1);
-								$cart = $player->get_movement(2);
-								$pig = $player->get_movement(3);
+								$foot = $players->get_movement(0);
+								$boat = $players->get_movement(1);
+								$cart = $players->get_movement(2);
+								$pig = $players->get_movement(3);
 								?>
 								<table class="table table-bordered table-striped table-condensed">
 									<thead>
@@ -215,10 +215,10 @@ $player = new Stats3_players(htmlentities($_GET['players'], ENT_QUOTES, 'UTF-8')
 							</div>
 							<div class="box-content">
 								<?php
-								$kills = $player->get_kills();
-								$deaths = $player->get_deaths();
-								$kills_player = $player->get_kills('players');
-								$deaths_player = $player->get_deaths('players');
+								$kills = $players->get_kills();
+								$deaths = $players->get_deaths();
+								$kills_player = $players->get_kills('players');
+								$deaths_player = $players->get_deaths('players');
 								
 								// prevent div. by zero
 								if($deaths > 0){
@@ -283,7 +283,7 @@ $player = new Stats3_players(htmlentities($_GET['players'], ENT_QUOTES, 'UTF-8')
 							<div class="box-content centered">
 								<div id="hover_kills" class="chart_hover_box">Move your mouse over chart!</div>
 								<div id="piechart_kills" style="height:300px"></div>
-								<?php $top = $player->get_all_kills(1); ?>
+								<?php $top = $players->get_all_kills(1); ?>
 								<img height="200" src="img/entities/<?php echo $top[0][0]; ?>.png" alt="Top killed" />
 							</div>
 						</div><!--/span-->
@@ -302,7 +302,7 @@ $player = new Stats3_players(htmlentities($_GET['players'], ENT_QUOTES, 'UTF-8')
 							<div class="box-content centered">
 								<div id="hover_deaths" class="chart_hover_box">Move your mouse over chart!</div>
 								<div id="piechart_deaths" style="height:300px"></div>
-								<?php $top = $player->get_all_deaths(1); ?>
+								<?php $top = $players->get_all_deaths(1); ?>
 								<img height="200" src="img/entities/<?php echo $top[0][0]; ?>.png" alt="Top killer" />
 							</div>
 						</div><!--/span-->

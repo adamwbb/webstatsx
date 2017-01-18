@@ -236,18 +236,18 @@ class stats_global extends stats_settings {
 			if(!empty($order)){
 				$s .= mysqli_real_escape_string($this->mysqli, $order);
 			} else {
-				$s .= 'asc';
+				$s .= 'name';
 			}
 
 			if(!empty($limit)){
 				$s .= ' LIMIT '.mysqli_real_escape_string($this->mysqli, $limit);
 			}
 
-			$this->gp_res = mysqli_query($this->mysqli, 'SELECT players FROM '.$this->prefix.'players '.$s);
+			$this->gp_res = mysqli_query($this->mysqli, 'SELECT name FROM '.$this->prefix.'players '.$s);
 		}
 
 		if($row = mysqli_fetch_assoc($this->gp_res)){
-		   	return new stats_players($row['players']);
+		   	return new stats_players($row['name']);
 		} else {
 			$this->gp_res = false;
 			return false;
@@ -255,9 +255,9 @@ class stats_global extends stats_settings {
 	}
 
 	public function count_players(){
-		$resource = mysqli_query($this->mysqli, 'SELECT COUNT(id) as id FROM '.$this->prefix.'last_join');
+		$resource = mysqli_query($this->mysqli, 'SELECT COUNT(uuid) as uuid FROM '.$this->prefix.'last_join');
 		$count = mysqli_fetch_assoc($resource);
-		return $count['id'];
+		return $count['uuid'];
 	}
 
 	public function get_total_distance_moved(){
@@ -296,9 +296,9 @@ class stats_global extends stats_settings {
 	// top functions
 	public function get_top_players_move($res_type = NULL, $limit = NULL){
 		if(empty($limit) || !is_integer($limit)){
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(distance) as value FROM '.$this->prefix.'move GROUP BY players ORDER BY value desc');
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(value) as value FROM '.$this->prefix.'move GROUP BY players ORDER BY value desc');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(distance) as value FROM '.$this->prefix.'move GROUP BY players ORDER BY value desc LIMIT '.$limit);			
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(value) as value FROM '.$this->prefix.'move GROUP BY players ORDER BY value desc LIMIT '.$limit);			
 		}
 
 		if($res_type == 'mysql'){
@@ -307,7 +307,7 @@ class stats_global extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['players'], $row['value']);
+					$return_arr[] = array($row['uuid'], $row['value']);
 			}
 
 			return $return_arr;
@@ -327,7 +327,7 @@ class stats_global extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['players'], $row['value']);
+					$return_arr[] = array($row['uuid'], $row['value']);
 			}
 
 			return $return_arr;
@@ -347,7 +347,7 @@ class stats_global extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['players'], $row['value']);
+					$return_arr[] = array($row['uuid'], $row['value']);
 			}
 
 			return $return_arr;
@@ -367,7 +367,7 @@ class stats_global extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['players'], $row['value']);
+					$return_arr[] = array($row['uuid'], $row['value']);
 			}
 
 			return $return_arr;
@@ -387,7 +387,7 @@ class stats_global extends stats_settings {
 			$return_arr = array();
 
 			while($row = mysqli_fetch_assoc($res)){
-					$return_arr[] = array($row['players'], $row['value']);
+					$return_arr[] = array($row['uuid'], $row['value']);
 			}
 
 			return $return_arr;
