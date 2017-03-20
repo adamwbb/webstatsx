@@ -1,10 +1,10 @@
 <?php
 include 'stats_web_core/classes.php';
-$players = new stats3_players(htmlentities($_GET['p'], ENT_QUOTES, 'UTF-8'));
+$player = new stats_player(htmlentities($_GET['p'], ENT_QUOTES, 'UTF-8'));
 ?>
 	var all_kills_data = [
 	<?php
-	$all_kills = $players->get_all_kills();
+	$all_kills = $player->get_all_kills();
 	echo '{ label: "'.$all_kills[0][0].'",  data: '.$all_kills[0][1].'}'; unset($all_kills[0]);
 	foreach($all_kills as $kill){
 		echo ',{ label: "'.$kill[0].'",  data: '.$kill[1].'}';
@@ -14,7 +14,7 @@ $players = new stats3_players(htmlentities($_GET['p'], ENT_QUOTES, 'UTF-8'));
 
 	var all_deaths_data = [
 	<?php
-	$all_deaths = $players->get_all_deaths();
+	$all_deaths = $player->get_all_deaths();
 	echo '{ label: "'.$all_deaths[0][0].'",  data: '.$all_deaths[0][1].'}'; unset($all_deaths[0]);
 	foreach($all_deaths as $death){
 		echo ',{ label: "'.$death[0].'",  data: '.$death[1].'}';
