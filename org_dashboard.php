@@ -59,10 +59,10 @@ include('header.php');
 						  </thead>
 						  <tbody>
 						  	<?php
-							while ($players = $stats_global->get_players('playtime', 'desc', 8)){
-            					echo '<tr><td><a class="ajax-link" href="single_player.php?p='.$players->players.'">'.$players->players.'</a></td>';
-            					echo '<td>'.$players->playtime.'</td>';
-            					echo '<td>'.$players->joins.'</td>';
+							while ($player = $stats_global->get_players('playtime', 'desc', 8)){
+            					echo '<tr><td><a class="ajax-link" href="single_player.php?p='.$player->player.'">'.$player->player.'</a></td>';
+            					echo '<td>'.$player->playtime.'</td>';
+            					echo '<td>'.$player->joins.'</td>';
             				}
 							?>							
 						  </tbody>
