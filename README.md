@@ -1,6 +1,6 @@
 #THIS PROJECT IS BEING UPDATED TO WORK WITH STATS3 PLEASE BE PAITENT.
 
-ETA: July 2017
+UPDATE: Progress Halted. Development server for testing died. Working on fixing server. If you want to help keep this project going feel free to contribute.
 
 Testing Status: Not Fully Functional
 
