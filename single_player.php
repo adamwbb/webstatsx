@@ -4,7 +4,7 @@ ini_set('display_errors', '1');
 
 include('header.php');
 
-$players = new (htmlentities($_GET['uuid'], ENT_QUOTES, 'UTF-8'));
+$players = new (htmlentities($_GET['name'], ENT_QUOTES, 'UTF-8'));
 ?>
 
 
@@ -17,7 +17,7 @@ $players = new (htmlentities($_GET['uuid'], ENT_QUOTES, 'UTF-8'));
 						<a href="players.php" class="ajax-link">Players</a> <span class="divider">/</span>
 					</li>
 					<li>
-						<a href="#" id="player_id"><?php echo $players->uuid; ?></a>
+						<a href="#" id="player_id"><?php echo $players->name; ?></a>
 					</li>
 				</ul>
 			</div>
@@ -27,7 +27,7 @@ $players = new (htmlentities($_GET['uuid'], ENT_QUOTES, 'UTF-8'));
 					<div class="row-fluid">
 						<div class="box span12">
 							<div class="box-header well" data-original-title>
-								<h2><i class="icon-user"></i> <?php echo $players->uuid; ?></h2>
+								<h2><i class="icon-user"></i> <?php echo $players->name; ?></h2>
 								<!--
 								<div class="box-icon">
 									<a href="#" class="btn btn-setting btn-round"><i class="icon-cog"></i></a>

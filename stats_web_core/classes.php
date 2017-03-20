@@ -56,7 +56,7 @@ class stats_players extends stats_settings {
 		$res = mysqli_query($this->mysqli, 'SELECT * FROM '.$this->prefix.'players WHERE players = "'.mysqli_real_escape_string($this->mysqli, $players).'"');
 
 		if(mysqli_num_rows($res) < 1){
-			echo 'Error! No user with given name "'.$players.'"!';
+			echo 'Error! No user with given uuid "'.$players.'"!';
 			return NULL;
 		} else {
 			$row = mysqli_fetch_assoc($res);
@@ -236,18 +236,18 @@ class stats_global extends stats_settings {
 			if(!empty($order)){
 				$s .= mysqli_real_escape_string($this->mysqli, $order);
 			} else {
-				$s .= 'name';
+				$s .= 'uuid';
 			}
 
 			if(!empty($limit)){
 				$s .= ' LIMIT '.mysqli_real_escape_string($this->mysqli, $limit);
 			}
 
-			$this->gp_res = mysqli_query($this->mysqli, 'SELECT name FROM '.$this->prefix.'players '.$s);
+			$this->gp_res = mysqli_query($this->mysqli, 'SELECT uuid FROM '.$this->prefix.'players '.$s);
 		}
 
 		if($row = mysqli_fetch_assoc($this->gp_res)){
-		   	return new stats_players($row['name']);
+		   	return new stats_players($row['uuid']);
 		} else {
 			$this->gp_res = false;
 			return false;
@@ -474,8 +474,8 @@ class bonus_methods {
 	public function get_custom_links(){
 		$links = $this->custom_links;
 		$prepared_links = "";
-		foreach ($links as $name => $url) {
-			$prepared_links .= "<li><a href='". $url ."'><i class='icon-arrow-left'></i><span class='hidden-tablet'> ". $name ."</span></a></li>" ;
+		foreach ($links as $uuid => $url) {
+			$prepared_links .= "<li><a href='". $url ."'><i class='icon-arrow-left'></i><span class='hidden-tablet'> ". $uuid ."</span></a></li>" ;
 		}
 		return $prepared_links;
 	}
