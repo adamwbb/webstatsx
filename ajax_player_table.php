@@ -1,6 +1,5 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', '1');
+
 	// Taken from http://www.datatables.net/release-datatables/examples/server_side/server_side.html
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * Easy set variables
@@ -9,10 +8,10 @@ ini_set('display_errors', '1');
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */
-	$aColumns = array( 'name', 'uuid', );
+	$aColumns = array( 'playerName', 'uuid', );
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
-	$sIndexColumn = 'name';
+	$sIndexColumn = 'playerName';
 	
 	@include 'config.php';
 
@@ -44,7 +43,7 @@ ini_set('display_errors', '1');
 	/* 
 	 * MySQL connection
 	 */
-	if ( ! $gaSql['link'] = mysql_pconnect( $gaSql['server'], $gaSql['user'], $gaSql['password']  ) )
+	if ( ! $gaSql['link'] = @mysql_pconnect( $gaSql['server'], $gaSql['user'], $gaSql['password']  ) )
 	{
 		fatal_error( 'Could not open connection to server' );
 	}
@@ -165,7 +164,7 @@ ini_set('display_errors', '1');
 		"sEcho" => intval($_GET['sEcho']),
 		"iTotalRecords" => $iTotal,
 		"iTotalDisplayRecords" => $iFilteredTotal,
-		"name" => array()
+		"playerName" => array()
 	);
 	
 	while ( $aRow = mysql_fetch_array( $rResult ) )
@@ -185,7 +184,7 @@ ini_set('display_errors', '1');
 				$row[] = $aRow[ $aColumns[$i] ];
 			}
 		}
-		$output['name']['uuid'][] = $row;
+		$output['playerName']['uuid'][] = $row;
 	}
 	
 	echo json_encode( $output );

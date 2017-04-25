@@ -43,7 +43,7 @@ class stats_players extends stats_settings {
 	public $tools_broken;
 	public $eggs_thrown;
 	public $items_crafted;
-	public $omnomnom;
+	public $food_eaten;
 	public $onfire;
 	public $words_said;
 	public $commands_done;
@@ -62,9 +62,9 @@ class stats_players extends stats_settings {
 			$row = mysqli_fetch_assoc($res);
 			$this->counter = $row['counter'];
 			$this->players = $row['players'];
-			$this->playtime = $this->convert_playtime($row['playtime']);
-			$this->arrows = $row['arrows'];
-			$this->move = $row['move'];
+			$this->playtime = $this->convert_playtime($row['timed_played']);
+			$this->arrows = $row['arrows_shot'];
+			$this->move = $row['distance_travelled'];
 			$this->xp_gained = $row['xp_gained'];
 			$this->joins = $row['joins'];
 			$this->fish_caught = $row['fish_caught'];
@@ -73,7 +73,7 @@ class stats_players extends stats_settings {
 			$this->tools_broken = $row['tools_broken'];
 			$this->eggs_thrown = $row['eggs_thrown'];
 			$this->items_crafted = $row['items_crafted'];
-			$this->omnomnom = $row['omnomnom'];
+			$this->omnomnom = $row['food_eaten'];
 			$this->onfire = $row['onfire'];
 			$this->words_said = $row['words_said'];
 			$this->commandsdone = $row['commands_done'];
@@ -228,7 +228,7 @@ class stats_global extends stats_settings {
 	public function get_players($by = NULL, $order = NULL, $limit = NULL){
 		if($this->gp_res === false){
 			if(empty($order)){
-				$s = 'ORDER BY players ';
+				$s = 'ORDER BY playerName ';
 			} else {
 				$s = 'ORDER BY '.mysqli_real_escape_string($this->mysqli, $by).' ';
 			}
@@ -243,11 +243,11 @@ class stats_global extends stats_settings {
 				$s .= ' LIMIT '.mysqli_real_escape_string($this->mysqli, $limit);
 			}
 
-			$this->gp_res = mysqli_query($this->mysqli, 'SELECT uuid FROM '.$this->prefix.'players '.$s);
+			$this->gp_res = mysqli_query($this->mysqli, 'SELECT playerName FROM '.$this->prefix.'players '.$s);
 		}
 
 		if($row = mysqli_fetch_assoc($this->gp_res)){
-		   	return new stats_players($row['uuid']);
+		   	return new stats_players($row['playerName']);
 		} else {
 			$this->gp_res = false;
 			return false;
@@ -255,25 +255,25 @@ class stats_global extends stats_settings {
 	}
 
 	public function count_players(){
-		$resource = mysqli_query($this->mysqli, 'SELECT COUNT(uuid) as uuid FROM '.$this->prefix.'last_join');
+		$resource = mysqli_query($this->mysqli, 'SELECT COUNT(uuid) as uuid FROM '.$this->prefix.'joins');
 		$count = mysqli_fetch_assoc($resource);
 		return $count['uuid'];
 	}
 
 	public function get_total_distance_moved(){
-		$res = mysqli_query($this->mysqli, 'SELECT SUM(value) as value FROM '.$this->prefix.'move');
+		$res = mysqli_query($this->mysqli, 'SELECT SUM(value) as value FROM '.$this->prefix.'distance_travelled');
 		$row = mysqli_fetch_assoc($res);
 		return $row['value'];
 	}
 
 	public function get_total_kills(){
-		$res = mysqli_query($this->mysqli, 'SELECT SUM(value) as value FROM '.$this->prefix.'kill');
+		$res = mysqli_query($this->mysqli, 'SELECT SUM(value) as value FROM '.$this->prefix.'kills_players');
 		$row = mysqli_fetch_assoc($res);
 		return $row['value'];
 	}
 
 	public function get_total_deaths(){
-		$res = mysqli_query($this->mysqli, 'SELECT SUM(value) as value FROM '.$this->prefix.'death');
+		$res = mysqli_query($this->mysqli, 'SELECT SUM(value) as value FROM '.$this->prefix.'deaths');
 		$row = mysqli_fetch_assoc($res);
 		return $row['value'];
 	}
@@ -336,9 +336,9 @@ class stats_global extends stats_settings {
 
 	public function get_top_players_death($res_type = NULL, $limit = NULL){
 		if(empty($limit) || !is_integer($limit)){
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(value) as value FROM '.$this->prefix.'death GROUP BY players ORDER BY value desc');
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(value) as value FROM '.$this->prefix.'deaths GROUP BY players ORDER BY value desc');
 		} else {
-			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(value) as value FROM '.$this->prefix.'death GROUP BY players ORDER BY value desc LIMIT '.$limit);			
+			$res = mysqli_query($this->mysqli, 'SELECT players, SUM(value) as value FROM '.$this->prefix.'deaths GROUP BY players ORDER BY value desc LIMIT '.$limit);			
 		}
 
 		if($res_type == 'mysql'){

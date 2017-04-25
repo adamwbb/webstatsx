@@ -1,0 +1,1316 @@
+{
+    "ace": {
+        "@guessTabSize": true,
+        "@newLineMode": "unix",
+        "@tabSize": "4",
+        "@useSoftTabs": true
+    },
+    "build": {
+        "@builder": "auto",
+        "@path": "/.c9/builders",
+        "@saveall": true
+    },
+    "find.nak": {
+        "@searchLimit": 100
+    },
+    "format": {
+        "jsbeautify": {
+            "@advanced": {},
+            "@braces": "end-expand",
+            "@indent_inner_html": false,
+            "@jslinthappy": "false",
+            "@keeparrayindentation": "false",
+            "@preserveempty": "true",
+            "@space_before_conditional": "true",
+            "@unescape_strings": "true"
+        }
+    },
+    "general": {
+        "@stripws": false
+    },
+    "golang": {
+        "@completion": true,
+        "@formatOnSave": true,
+        "@formatter": "gofmt -w \"$file\""
+    },
+    "javascript": {
+        "@formatOnSave": "false",
+        "@formatter": "esformatter -i \"$file\"",
+        "@use_jsbeautify": "true"
+    },
+    "language": {
+        "@eslintrc": true,
+        "@semi": true,
+        "@undeclaredVars": true,
+        "@unusedFunctionArgs": false,
+        "@warnLevel": "info",
+        "tern_defs": {
+            "json()": {
+                "Finch": {
+                    "enabled": true
+                },
+                "Headroom": {
+                    "enabled": true
+                },
+                "JSONStream": {
+                    "enabled": true
+                },
+                "LICENSE": {
+                    "enabled": true
+                },
+                "accounting": {
+                    "enabled": true
+                },
+                "ace": {
+                    "enabled": true
+                },
+                "add2home": {
+                    "enabled": true
+                },
+                "alertify": {
+                    "enabled": true
+                },
+                "amcharts": {
+                    "enabled": true
+                },
+                "angularfire": {
+                    "enabled": true
+                },
+                "appframework": {
+                    "enabled": true
+                },
+                "appletvjs": {
+                    "enabled": true
+                },
+                "applicationinsights": {
+                    "enabled": true
+                },
+                "arbiter": {
+                    "enabled": true
+                },
+                "argparse": {
+                    "enabled": true
+                },
+                "asciify": {
+                    "enabled": true
+                },
+                "assert": {
+                    "enabled": true
+                },
+                "assertsharp": {
+                    "enabled": true
+                },
+                "atmosphere": {
+                    "enabled": true
+                },
+                "atom": {
+                    "enabled": true
+                },
+                "atpl": {
+                    "enabled": true
+                },
+                "auth0": {
+                    "enabled": true
+                },
+                "axios": {
+                    "enabled": true
+                },
+                "backgrid": {
+                    "enabled": true
+                },
+                "bardjs": {
+                    "enabled": true
+                },
+                "bcrypt": {
+                    "enabled": true
+                },
+                "bcryptjs": {
+                    "enabled": true
+                },
+                "bgiframe": {
+                    "enabled": true
+                },
+                "bigint": {
+                    "enabled": true
+                },
+                "bigscreen": {
+                    "enabled": true
+                },
+                "blocks": {
+                    "enabled": true
+                },
+                "boom": {
+                    "enabled": true
+                },
+                "bootbox": {
+                    "enabled": true
+                },
+                "bootstrap": {
+                    "enabled": true
+                },
+                "bowser": {
+                    "enabled": true
+                },
+                "browser": {
+                    "enabled": true
+                },
+                "bucks": {
+                    "enabled": true
+                },
+                "bytebuffer": {
+                    "enabled": true
+                },
+                "calq": {
+                    "enabled": true
+                },
+                "camljs": {
+                    "enabled": true
+                },
+                "canvasjs": {
+                    "enabled": true
+                },
+                "casperjs": {
+                    "enabled": true
+                },
+                "chai": {
+                    "enabled": true
+                },
+                "chalk": {
+                    "enabled": true
+                },
+                "chartist": {
+                    "enabled": true
+                },
+                "chartjs": {
+                    "enabled": true
+                },
+                "chosen": {
+                    "enabled": true
+                },
+                "chui": {
+                    "enabled": true
+                },
+                "codemirror": {
+                    "enabled": true
+                },
+                "colors": {
+                    "enabled": true
+                },
+                "cometd": {
+                    "enabled": true
+                },
+                "complex": {
+                    "enabled": true
+                },
+                "config": {
+                    "enabled": true
+                },
+                "configstore": {
+                    "enabled": true
+                },
+                "consolidate": {
+                    "enabled": true
+                },
+                "cookie": {
+                    "enabled": true
+                },
+                "cookiejs": {
+                    "enabled": true
+                },
+                "cordova": {
+                    "enabled": true
+                },
+                "cordovarduino": {
+                    "enabled": true
+                },
+                "couchbase": {
+                    "enabled": true
+                },
+                "cron": {
+                    "enabled": true
+                },
+                "crossfilter": {
+                    "enabled": true
+                },
+                "crossroads": {
+                    "enabled": true
+                },
+                "cryptojs": {
+                    "enabled": true
+                },
+                "cson": {
+                    "enabled": true
+                },
+                "dagre": {
+                    "enabled": true
+                },
+                "datejs": {
+                    "enabled": true
+                },
+                "dcjs": {
+                    "enabled": true
+                },
+                "deployJava": {
+                    "enabled": true
+                },
+                "dexie": {
+                    "enabled": true
+                },
+                "dhtmlxgantt": {
+                    "enabled": true
+                },
+                "dhtmlxscheduler": {
+                    "enabled": true
+                },
+                "diff": {
+                    "enabled": true
+                },
+                "docCookies": {
+                    "enabled": true
+                },
+                "documentdb": {
+                    "enabled": true
+                },
+                "dojo": {
+                    "enabled": true
+                },
+                "domo": {
+                    "enabled": true
+                },
+                "dompurify": {
+                    "enabled": true
+                },
+                "donna": {
+                    "enabled": true
+                },
+                "dot": {
+                    "enabled": true
+                },
+                "dotdotdot": {
+                    "enabled": true
+                },
+                "doublearray": {
+                    "enabled": true
+                },
+                "dragula": {
+                    "enabled": true
+                },
+                "dropboxjs": {
+                    "enabled": true
+                },
+                "dropzone": {
+                    "enabled": true
+                },
+                "dsv": {
+                    "enabled": true
+                },
+                "durandal": {
+                    "enabled": true
+                },
+                "each": {
+                    "enabled": true
+                },
+                "easeljs": {
+                    "enabled": true
+                },
+                "easystarjs": {
+                    "enabled": true
+                },
+                "ecma5": {
+                    "enabled": true
+                },
+                "elm": {
+                    "enabled": true
+                },
+                "ember": {
+                    "enabled": true
+                },
+                "emissary": {
+                    "enabled": true
+                },
+                "empower": {
+                    "enabled": true
+                },
+                "emscripten": {
+                    "enabled": true
+                },
+                "epiceditor": {
+                    "enabled": true
+                },
+                "eventemitter2": {
+                    "enabled": true
+                },
+                "expectations": {
+                    "enabled": true
+                },
+                "fabricjs": {
+                    "enabled": true
+                },
+                "fancybox": {
+                    "enabled": true
+                },
+                "fastclick": {
+                    "enabled": true
+                },
+                "featherlight": {
+                    "enabled": true
+                },
+                "filesystem": {
+                    "enabled": true
+                },
+                "filewriter": {
+                    "enabled": true
+                },
+                "fingerprintjs": {
+                    "enabled": true
+                },
+                "firebase": {
+                    "enabled": true
+                },
+                "firefox": {
+                    "enabled": true
+                },
+                "flat": {
+                    "enabled": true
+                },
+                "flexSlider": {
+                    "enabled": true
+                },
+                "flight": {
+                    "enabled": true
+                },
+                "flipsnap": {
+                    "enabled": true
+                },
+                "flowjs": {
+                    "enabled": true
+                },
+                "fluxxor": {
+                    "enabled": true
+                },
+                "foundation": {
+                    "enabled": true
+                },
+                "fpsmeter": {
+                    "enabled": true
+                },
+                "ftdomdelegate": {
+                    "enabled": true
+                },
+                "fuse": {
+                    "enabled": true
+                },
+                "gamepad": {
+                    "enabled": true
+                },
+                "gamequery": {
+                    "enabled": true
+                },
+                "geojson": {
+                    "enabled": true
+                },
+                "giraffe": {
+                    "enabled": true
+                },
+                "gldatepicker": {
+                    "enabled": true
+                },
+                "glidejs": {
+                    "enabled": true
+                },
+                "globalize": {
+                    "enabled": true
+                },
+                "graphviz": {
+                    "enabled": true
+                },
+                "greasemonkey": {
+                    "enabled": true
+                },
+                "grecaptcha": {
+                    "enabled": true
+                },
+                "gruntjs": {
+                    "enabled": true
+                },
+                "gsap": {
+                    "enabled": true
+                },
+                "hammerjs": {
+                    "enabled": true
+                },
+                "handlebars": {
+                    "enabled": true
+                },
+                "hasher": {
+                    "enabled": true
+                },
+                "hashids": {
+                    "enabled": true
+                },
+                "hashmap": {
+                    "enabled": true
+                },
+                "hashset": {
+                    "enabled": true
+                },
+                "hashtable": {
+                    "enabled": true
+                },
+                "he": {
+                    "enabled": true
+                },
+                "heap": {
+                    "enabled": true
+                },
+                "hellojs": {
+                    "enabled": true
+                },
+                "highland": {
+                    "enabled": true
+                },
+                "history": {
+                    "enabled": true
+                },
+                "howlerjs": {
+                    "enabled": true
+                },
+                "html2canvas": {
+                    "enabled": true
+                },
+                "htmlparser2": {
+                    "enabled": true
+                },
+                "humane": {
+                    "enabled": true
+                },
+                "i18next": {
+                    "enabled": true
+                },
+                "iban": {
+                    "enabled": true
+                },
+                "icheck": {
+                    "enabled": true
+                },
+                "impress": {
+                    "enabled": true
+                },
+                "inflection": {
+                    "enabled": true
+                },
+                "ini": {
+                    "enabled": true
+                },
+                "iniparser": {
+                    "enabled": true
+                },
+                "interactjs": {
+                    "enabled": true
+                },
+                "intercomjs": {
+                    "enabled": true
+                },
+                "inversify": {
+                    "enabled": true
+                },
+                "ionic": {
+                    "enabled": true
+                },
+                "ip": {
+                    "enabled": true
+                },
+                "is_js": {
+                    "enabled": true
+                },
+                "iscroll": {
+                    "enabled": true
+                },
+                "jQuery": {
+                    "enabled": true
+                },
+                "jake": {
+                    "enabled": true
+                },
+                "jasmine": {
+                    "enabled": true
+                },
+                "java": {
+                    "enabled": true
+                },
+                "jbinary": {
+                    "enabled": true
+                },
+                "jdataview": {
+                    "enabled": true
+                },
+                "jest": {
+                    "enabled": true
+                },
+                "joData": {
+                    "enabled": true
+                },
+                "joi": {
+                    "enabled": true
+                },
+                "jointjs": {
+                    "enabled": true
+                },
+                "jqgrid": {
+                    "enabled": true
+                },
+                "jqrangeslider": {
+                    "enabled": true
+                },
+                "jsbn": {
+                    "enabled": true
+                },
+                "jscrollpane": {
+                    "enabled": true
+                },
+                "jsdeferred": {
+                    "enabled": true
+                },
+                "jsfl": {
+                    "enabled": true
+                },
+                "jsnlog": {
+                    "enabled": true
+                },
+                "jsoneditoronline": {
+                    "enabled": true
+                },
+                "jsonwebtoken": {
+                    "enabled": true
+                },
+                "jsplumb": {
+                    "enabled": true
+                },
+                "jsrender": {
+                    "enabled": true
+                },
+                "jssha": {
+                    "enabled": true
+                },
+                "jstorage": {
+                    "enabled": true
+                },
+                "jstree": {
+                    "enabled": true
+                },
+                "jsts": {
+                    "enabled": true
+                },
+                "jszip": {
+                    "enabled": true
+                },
+                "jwplayer": {
+                    "enabled": true
+                },
+                "katex": {
+                    "enabled": true
+                },
+                "keyboardjs": {
+                    "enabled": true
+                },
+                "keymaster": {
+                    "enabled": true
+                },
+                "keypress": {
+                    "enabled": true
+                },
+                "keytar": {
+                    "enabled": true
+                },
+                "kineticjs": {
+                    "enabled": true
+                },
+                "knockback": {
+                    "enabled": true
+                },
+                "knockstrap": {
+                    "enabled": true
+                },
+                "kolite": {
+                    "enabled": true
+                },
+                "kuromoji": {
+                    "enabled": true
+                },
+                "ladda": {
+                    "enabled": true
+                },
+                "later": {
+                    "enabled": true
+                },
+                "leapmotionTS": {
+                    "enabled": true
+                },
+                "levelup": {
+                    "enabled": true
+                },
+                "linq": {
+                    "enabled": true
+                },
+                "lockfile": {
+                    "enabled": true
+                },
+                "logg": {
+                    "enabled": true
+                },
+                "loggly": {
+                    "enabled": true
+                },
+                "lolex": {
+                    "enabled": true
+                },
+                "long": {
+                    "enabled": true
+                },
+                "lscache": {
+                    "enabled": true
+                },
+                "lunr": {
+                    "enabled": true
+                },
+                "mCustomScrollbar": {
+                    "enabled": true
+                },
+                "magicsuggest": {
+                    "enabled": true
+                },
+                "mailcheck": {
+                    "enabled": true
+                },
+                "mapsjs": {
+                    "enabled": true
+                },
+                "mariasql": {
+                    "enabled": true
+                },
+                "marked": {
+                    "enabled": true
+                },
+                "markerclustererplus": {
+                    "enabled": true
+                },
+                "maskedinput": {
+                    "enabled": true
+                },
+                "mathjax": {
+                    "enabled": true
+                },
+                "mdns": {
+                    "enabled": true
+                },
+                "meshblu": {
+                    "enabled": true
+                },
+                "messenger": {
+                    "enabled": true
+                },
+                "meteor": {
+                    "enabled": true
+                },
+                "metismenu": {
+                    "enabled": true
+                },
+                "milliseconds": {
+                    "enabled": true
+                },
+                "mime": {
+                    "enabled": true
+                },
+                "minilog": {
+                    "enabled": true
+                },
+                "mixpanel": {
+                    "enabled": true
+                },
+                "mixto": {
+                    "enabled": true
+                },
+                "mockery": {
+                    "enabled": true
+                },
+                "mongodb": {
+                    "enabled": true
+                },
+                "moviedb": {
+                    "enabled": true
+                },
+                "msgpack": {
+                    "enabled": true
+                },
+                "mu2": {
+                    "enabled": true
+                },
+                "mustache": {
+                    "enabled": true
+                },
+                "nconf": {
+                    "enabled": true
+                },
+                "ncp": {
+                    "enabled": true
+                },
+                "nedb": {
+                    "enabled": true
+                },
+                "needle": {
+                    "enabled": true
+                },
+                "netmask": {
+                    "enabled": true
+                },
+                "ngbootbox": {
+                    "enabled": true
+                },
+                "ngprogress": {
+                    "enabled": true
+                },
+                "ngwysiwyg": {
+                    "enabled": true
+                },
+                "noVNC": {
+                    "enabled": true
+                },
+                "node_zeromq": {
+                    "enabled": true
+                },
+                "nodemailer": {
+                    "enabled": true
+                },
+                "nomnom": {
+                    "enabled": true
+                },
+                "notify": {
+                    "enabled": true
+                },
+                "notifyjs": {
+                    "enabled": true
+                },
+                "npm": {
+                    "enabled": true
+                },
+                "nprogress": {
+                    "enabled": true
+                },
+                "numbro": {
+                    "enabled": true
+                },
+                "numeraljs": {
+                    "enabled": true
+                },
+                "oboe": {
+                    "enabled": true
+                },
+                "onsenui": {
+                    "enabled": true
+                },
+                "openlayers": {
+                    "enabled": true
+                },
+                "owlcarousel": {
+                    "enabled": true
+                },
+                "p2": {
+                    "enabled": true
+                },
+                "page": {
+                    "enabled": true
+                },
+                "pako": {
+                    "enabled": true
+                },
+                "parallel": {
+                    "enabled": true
+                },
+                "pdf": {
+                    "enabled": true
+                },
+                "peerjs": {
+                    "enabled": true
+                },
+                "persona": {
+                    "enabled": true
+                },
+                "pgwmodal": {
+                    "enabled": true
+                },
+                "phantom": {
+                    "enabled": true
+                },
+                "phantomjs": {
+                    "enabled": true
+                },
+                "phonegap": {
+                    "enabled": true
+                },
+                "photonui": {
+                    "enabled": true
+                },
+                "physijs": {
+                    "enabled": true
+                },
+                "pikaday": {
+                    "enabled": true
+                },
+                "pinkyswear": {
+                    "enabled": true
+                },
+                "platform": {
+                    "enabled": true
+                },
+                "pleasejs": {
+                    "enabled": true
+                },
+                "pluralize": {
+                    "enabled": true
+                },
+                "podcast": {
+                    "enabled": true
+                },
+                "poly2tri": {
+                    "enabled": true
+                },
+                "polyline": {
+                    "enabled": true
+                },
+                "popcorn": {
+                    "enabled": true
+                },
+                "postal": {
+                    "enabled": true
+                },
+                "pouchDB": {
+                    "enabled": true
+                },
+                "precond": {
+                    "enabled": true
+                },
+                "preloadjs": {
+                    "enabled": true
+                },
+                "progressjs": {
+                    "enabled": true
+                },
+                "protobufjs": {
+                    "enabled": true
+                },
+                "proxyquire": {
+                    "enabled": true
+                },
+                "pubsubjs": {
+                    "enabled": true
+                },
+                "purl": {
+                    "enabled": true
+                },
+                "q": {
+                    "enabled": true
+                },
+                "qajax": {
+                    "enabled": true
+                },
+                "qs": {
+                    "enabled": true
+                },
+                "quixote": {
+                    "enabled": true
+                },
+                "qunit": {
+                    "enabled": true
+                },
+                "qwest": {
+                    "enabled": true
+                },
+                "radius": {
+                    "enabled": true
+                },
+                "raphael": {
+                    "enabled": true
+                },
+                "rappid": {
+                    "enabled": true
+                },
+                "ravenjs": {
+                    "enabled": true
+                },
+                "raygun4js": {
+                    "enabled": true
+                },
+                "recaptcha": {
+                    "enabled": true
+                },
+                "redis": {
+                    "enabled": true
+                },
+                "redux": {
+                    "enabled": true
+                },
+                "ref": {
+                    "enabled": true
+                },
+                "requirejs": {
+                    "enabled": true
+                },
+                "resemblejs": {
+                    "enabled": true
+                },
+                "restangular": {
+                    "enabled": true
+                },
+                "rethinkdb": {
+                    "enabled": true
+                },
+                "reveal": {
+                    "enabled": true
+                },
+                "riotcontrol": {
+                    "enabled": true
+                },
+                "rivets": {
+                    "enabled": true
+                },
+                "rosie": {
+                    "enabled": true
+                },
+                "routie": {
+                    "enabled": true
+                },
+                "royalslider": {
+                    "enabled": true
+                },
+                "rtree": {
+                    "enabled": true
+                },
+                "sammyjs": {
+                    "enabled": true
+                },
+                "sanitizer": {
+                    "enabled": true
+                },
+                "screenfull": {
+                    "enabled": true
+                },
+                "scroller": {
+                    "enabled": true
+                },
+                "selectize": {
+                    "enabled": true
+                },
+                "semver": {
+                    "enabled": true
+                },
+                "sendgrid": {
+                    "enabled": true
+                },
+                "sharedworker": {
+                    "enabled": true
+                },
+                "shortid": {
+                    "enabled": true
+                },
+                "should": {
+                    "enabled": true
+                },
+                "showdown": {
+                    "enabled": true
+                },
+                "siesta": {
+                    "enabled": true
+                },
+                "sigmajs": {
+                    "enabled": true
+                },
+                "signature_pad": {
+                    "enabled": true
+                },
+                "simplebar": {
+                    "enabled": true
+                },
+                "sinon": {
+                    "enabled": true
+                },
+                "sjcl": {
+                    "enabled": true
+                },
+                "ski": {
+                    "enabled": true
+                },
+                "skyway": {
+                    "enabled": true
+                },
+                "slickgrid": {
+                    "enabled": true
+                },
+                "smoothie": {
+                    "enabled": true
+                },
+                "socketty": {
+                    "enabled": true
+                },
+                "sockjs": {
+                    "enabled": true
+                },
+                "soundjs": {
+                    "enabled": true
+                },
+                "spectrum": {
+                    "enabled": true
+                },
+                "spin": {
+                    "enabled": true
+                },
+                "sprintf": {
+                    "enabled": true
+                },
+                "stats": {
+                    "enabled": true
+                },
+                "steam": {
+                    "enabled": true
+                },
+                "storejs": {
+                    "enabled": true
+                },
+                "streamjs": {
+                    "enabled": true
+                },
+                "string_score": {
+                    "enabled": true
+                },
+                "stripe": {
+                    "enabled": true
+                },
+                "stylus": {
+                    "enabled": true
+                },
+                "succinct": {
+                    "enabled": true
+                },
+                "sugar": {
+                    "enabled": true
+                },
+                "svgjs": {
+                    "enabled": true
+                },
+                "swag": {
+                    "enabled": true
+                },
+                "swfobject": {
+                    "enabled": true
+                },
+                "swiftclick": {
+                    "enabled": true
+                },
+                "swig": {
+                    "enabled": true
+                },
+                "swipe": {
+                    "enabled": true
+                },
+                "swiper": {
+                    "enabled": true
+                },
+                "swipeview": {
+                    "enabled": true
+                },
+                "swiz": {
+                    "enabled": true
+                },
+                "systemjs": {
+                    "enabled": true
+                },
+                "tabris": {
+                    "enabled": true
+                },
+                "tabtab": {
+                    "enabled": true
+                },
+                "tcomb": {
+                    "enabled": true
+                },
+                "teechart": {
+                    "enabled": true
+                },
+                "tether": {
+                    "enabled": true
+                },
+                "threejs": {
+                    "enabled": true
+                },
+                "thrift": {
+                    "enabled": true
+                },
+                "timelinejs": {
+                    "enabled": true
+                },
+                "tinycolor": {
+                    "enabled": true
+                },
+                "titanium": {
+                    "enabled": true
+                },
+                "toastr": {
+                    "enabled": true
+                },
+                "tooltipster": {
+                    "enabled": true
+                },
+                "traceback": {
+                    "enabled": true
+                },
+                "traverson": {
+                    "enabled": true
+                },
+                "trunk8": {
+                    "enabled": true
+                },
+                "tsmonad": {
+                    "enabled": true
+                },
+                "tspromise": {
+                    "enabled": true
+                },
+                "tv4": {
+                    "enabled": true
+                },
+                "tweenjs": {
+                    "enabled": true
+                },
+                "twig": {
+                    "enabled": true
+                },
+                "twitter": {
+                    "enabled": true
+                },
+                "twix": {
+                    "enabled": true
+                },
+                "underscore": {
+                    "enabled": true
+                },
+                "unorm": {
+                    "enabled": true
+                },
+                "urijs": {
+                    "enabled": true
+                },
+                "usage": {
+                    "enabled": true
+                },
+                "uuid": {
+                    "enabled": true
+                },
+                "validator": {
+                    "enabled": true
+                },
+                "victor": {
+                    "enabled": true
+                },
+                "videojs": {
+                    "enabled": true
+                },
+                "viewporter": {
+                    "enabled": true
+                },
+                "vimeo": {
+                    "enabled": true
+                },
+                "webaudioapi": {
+                    "enabled": true
+                },
+                "webcl": {
+                    "enabled": true
+                },
+                "webfontloader": {
+                    "enabled": true
+                },
+                "webmidi": {
+                    "enabled": true
+                },
+                "webspeechapi": {
+                    "enabled": true
+                },
+                "websql": {
+                    "enabled": true
+                },
+                "winston": {
+                    "enabled": true
+                },
+                "wnumb": {
+                    "enabled": true
+                },
+                "wrench": {
+                    "enabled": true
+                },
+                "x2js": {
+                    "enabled": true
+                },
+                "xdate": {
+                    "enabled": true
+                },
+                "xlsx": {
+                    "enabled": true
+                },
+                "xpath": {
+                    "enabled": true
+                },
+                "xsockets": {
+                    "enabled": true
+                },
+                "youtube": {
+                    "enabled": true
+                },
+                "yui": {
+                    "enabled": true
+                },
+                "zepto": {
+                    "enabled": true
+                },
+                "zeroclipboard": {
+                    "enabled": true
+                }
+            }
+        }
+    },
+    "php": {
+        "@completion": true,
+        "@formatOnSave": false,
+        "@path": ".:./vendor"
+    },
+    "python": {
+        "@completion": true,
+        "@path": "/usr/local/lib/python2.7/dist-packages:/usr/local/lib/python3.4/dist-packages:/usr/local/lib/python3.5/dist-packages",
+        "@version": "python2"
+    },
+    "run": {
+        "@path": "/.c9/runners",
+        "configs": {
+            "@inited": "true",
+            "json()": {
+                "Apache & PHP": {
+                    "command": "",
+                    "debug": false,
+                    "default": true,
+                    "name": "Apache & PHP",
+                    "runner": "Apache httpd (PHP, HTML)",
+                    "toolbar": true
+                },
+                "PHP": {
+                    "command": "",
+                    "default": true,
+                    "name": "Apache & PHP",
+                    "runner": "Apache httpd (PHP, HTML)"
+                }
+            }
+        }
+    },
+    "share": {
+        "@app": false,
+        "@preview": false,
+        "@useOwnerSettings": false
+    }
+}

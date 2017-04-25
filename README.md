@@ -1,4 +1,5 @@
-#THIS PROJECT IS BEING UPDATED TO WORK WITH STATS3 PLEASE BE PAITENT.
+#THIS PROJECT IS BEING UPDATED TO WORK WITH STATZ PLEASE BE PAITENT.
+Stats3 is being abandoned so i am updating code to support statz
 
 
 Testing Status: Not Fully Functional
@@ -29,7 +30,7 @@ Add New Block and Entity Images
 WEBStatsX Reloaded is a continuation of the work from cynexit's project. All help and support is needed so please feel free to contribute to this project to have it up and running sooner.
 
 
-This is an alternative Web-Interface for the Stats plugin by lolmewn. ( http://dev.bukkit.org/server-mods/lolmewnstats/ )
+
 It displays nearly everything you can get out of the collected data, it is also working on small screens (mobile phones, tablets).
 
 === What do I need? ===
