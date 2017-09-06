@@ -47,8 +47,7 @@
 
 						$uptime = explode(' ', exec("cat /proc/uptime r"));
 
-						echo '<p>Machine up since: '.Stats3_players::convert_playtime($uptime[0]).'</p>';
-						echo '<p>Total idle time: '.Stats3_players::convert_playtime($uptime[1]).'</p>';
+						
 
 
 						/*

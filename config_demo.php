@@ -5,7 +5,7 @@ $mysql_user = 'MYSQL_USER'; // your MySQL database user
 $mysql_pass = 'MYSQL_PASSWORD'; // your MySQL database password
 $mysql_db = 'MYSQL_DATABASE_NAME'; // your MySQL database name
 $mysql_encoding = 'latin1';  // this is recommended because the plugin creates all its tables with latin1 encoding
-$prefix = 'Stats3_'; // plugin default is "Stats3_"
+$prefix = 'Statsz_'; // plugin default is "Statsz_"
 
 
 /**
