@@ -20,7 +20,7 @@ Deaths Working
 
 TODO:
 
-Get top 10 lists working.
+Get top 10 lists working. (partial working now traveller and deaths working)
 
 Get Players List working.
 
